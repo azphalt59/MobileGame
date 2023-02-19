@@ -14,6 +14,8 @@ public class GridManager : MonoBehaviour
     public static GridManager Instance;
 
     public GameObject tileBase;
+    public Material obstacleMat;
+    public Material freeMat;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class GridManager : MonoBehaviour
                 tile.GetComponent<Tile>().gridIndex = (int)((row * cols) + col);
                 tile.GetComponent<Tile>().tileGround = tile;
                 tile.GetComponent<Tile>().triggerMovement = tile.transform.GetChild(0).gameObject;
+                tile.GetComponent<Tile>().freeMat = freeMat;
                 tile.transform.parent = gridParent.transform;
                 tile.transform.localScale *= caseSize;
                 Cases.Add(tile);
@@ -62,17 +65,43 @@ public class GridManager : MonoBehaviour
     {
         
         // Top
-        if(currentPlayerPos - (int)cols >= 0)  
+        if(currentPlayerPos - (int)cols >= 0)
+        {
+            if(Cases[currentPlayerPos - (int)cols].GetComponent<Tile>().isFree) 
             Cases[currentPlayerPos - (int)cols].GetComponent<Tile>().triggerMovement.SetActive(true);
+        }
+        
         // Bot
         if (currentPlayerPos + (int)cols <= rows*cols-1)
+        {
+            if (Cases[currentPlayerPos + (int)cols].GetComponent<Tile>().isFree)
             Cases[currentPlayerPos + (int)cols].GetComponent<Tile>().triggerMovement.SetActive(true);
+        }
+            
         // Left
         if (currentPlayerPos%cols != 0)
-            Cases[currentPlayerPos - 1].GetComponent<Tile>().triggerMovement.SetActive(true);
+        {
+            if(Cases[currentPlayerPos - 1].GetComponent<Tile>().isFree == false)
+            {
+            }
+            else
+            {
+                Cases[currentPlayerPos - 1].GetComponent<Tile>().triggerMovement.SetActive(true);
+            }
+            
+        }
+            
         // Right
         if (currentPlayerPos%cols != cols-1)
-            Cases[currentPlayerPos + 1].GetComponent<Tile>().triggerMovement.SetActive(true);
+        {
+            if (Cases[currentPlayerPos + 1].GetComponent<Tile>().isFree == false)
+            {
+            }
+            else
+            {
+                Cases[currentPlayerPos + 1].GetComponent<Tile>().triggerMovement.SetActive(true);
+            }
+        }    
     }
     private void OnDrawGizmos()
     {
