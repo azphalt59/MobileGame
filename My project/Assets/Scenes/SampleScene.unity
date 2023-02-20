@@ -237,6 +237,9 @@ MonoBehaviour:
   Cases: []
   playerStart: 10
   tileBase: {fileID: 3376230475358980804, guid: 84cdeb79c615c664e822f896d41ebde9, type: 3}
+  MovableObject: {fileID: 1757208891803708959, guid: f429c651ea584bd41a490a342e528361, type: 3}
+  obstacleMat: {fileID: 2100000, guid: fec2d4af620ae254dbda5c3298f552c2, type: 2}
+  freeMat: {fileID: 2100000, guid: d1f693cf3df2576419e52af8e1f834ae, type: 2}
 --- !u!4 &503188307
 Transform:
   m_ObjectHideFlags: 0
