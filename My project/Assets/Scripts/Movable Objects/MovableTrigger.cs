@@ -19,6 +19,7 @@ public class MovableTrigger : MonoBehaviour
         PlayerController.Instance.gameObject.transform.position = obj.transform.position;
         obj.transform.position = transform.position;
         obj.GetComponent<MovableObject>().HideTrigger();
+        GridController.Instance.DisableTrigger();
     }
     
 }

@@ -19,5 +19,10 @@ public class PlayerDectector : MonoBehaviour
         {
             obj.GetComponent<MovableObject>().ShowTrigger(triggerLinkToThis);
         }
+        if(other.gameObject.GetComponent<MovableObject>() != null || other.gameObject.GetComponent<MovableObject>() != null)
+        {
+            obj.GetComponent<MovableObject>().HideThisTrigger(triggerLinkToThis);
+        }
+        
     }
 }

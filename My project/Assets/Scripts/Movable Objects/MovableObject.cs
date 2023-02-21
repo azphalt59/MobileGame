@@ -19,6 +19,10 @@ public class MovableObject : MonoBehaviour
             item.gameObject.SetActive(false);
         }
     }
+    public void HideThisTrigger(GameObject go)
+    {
+        go.SetActive(false);
+    }
     public void HideTrigger()
     {
         foreach (MovableTrigger item in MovableTriggers)
