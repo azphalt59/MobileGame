@@ -7,6 +7,7 @@ public class GridController : MonoBehaviour
     public static GridController Instance;
     public List<GameObject> objectsTrigger;
     public List<InteractionEnabler> interactionEnablers;
+    public List<CatMovement> cats;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,5 +32,12 @@ public class GridController : MonoBehaviour
             item.gameObject.SetActive(false);
         }
         interactionEnablers.Clear();
+    }
+    public void ExecuteCatsMovement()
+    {
+        foreach (CatMovement cat in cats)
+        {
+            cat.ExecutePath();
+        }
     }
 }
