@@ -11,6 +11,7 @@ public class PlayerDectector : MonoBehaviour
     {
         float scale = Grid.Instance.SetPlayerSpeed();
         obj = transform.parent.transform.parent.gameObject;
+        obj.GetComponent<MovableObject>().DetectorsCollider.Add(GetComponent<Collider>());
         transform.localPosition = new Vector3(transform.localPosition.x * scale / obj.transform.localScale.x, transform.localPosition.y, transform.localPosition.z * scale / obj.transform.localScale.z);
     }
     private void OnTriggerEnter(Collider other)

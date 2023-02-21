@@ -6,6 +6,7 @@ public class MovableObject : MonoBehaviour
 {
     public List<MovableTrigger> MovableTriggers;
     public List<PlayerDectector> PlayerDectectors;
+    public List<Collider> DetectorsCollider;
     public GameObject InteractionEnabler;
     public void ShowTrigger(GameObject triggeredtrigger)
     {
@@ -35,4 +36,13 @@ public class MovableObject : MonoBehaviour
             item.gameObject.SetActive(true);
         }
     }
+    public void RefreshColliders()
+    {
+        foreach (Collider collider in DetectorsCollider)
+        {
+            collider.enabled = false;
+            collider.enabled = true;
+        }
+    }
+
 }
