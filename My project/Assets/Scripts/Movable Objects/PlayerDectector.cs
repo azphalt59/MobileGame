@@ -6,6 +6,7 @@ public class PlayerDectector : MonoBehaviour
 {
     GameObject obj;
     [SerializeField] private GameObject triggerLinkToThis;
+    [SerializeField] private GameObject interactionEnabler;
     private void Start()
     {
         float scale = Grid.Instance.SetPlayerSpeed();
@@ -17,7 +18,7 @@ public class PlayerDectector : MonoBehaviour
        
         if(other.gameObject.GetComponent<PlayerController>() != null)
         {
-            obj.GetComponent<MovableObject>().ShowTrigger(triggerLinkToThis);
+            interactionEnabler.SetActive(true);
         }
         if(other.gameObject.GetComponent<MovableObject>() != null || other.gameObject.GetComponent<MovableObject>() != null)
         {

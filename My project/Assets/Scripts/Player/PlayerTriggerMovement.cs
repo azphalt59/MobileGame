@@ -17,6 +17,7 @@ public class PlayerTriggerMovement : MonoBehaviour
     {
         player.transform.position = transform.position;
         player.GetComponent<PlayerController>().ResetPlayerTriggerMovement();
+        GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableTrigger();
     }
     private void OnTriggerEnter(Collider other)

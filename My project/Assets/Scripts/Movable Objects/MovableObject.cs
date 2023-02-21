@@ -6,6 +6,7 @@ public class MovableObject : MonoBehaviour
 {
     public List<MovableTrigger> MovableTriggers;
     public List<PlayerDectector> PlayerDectectors;
+    public GameObject InteractionEnabler;
     public void ShowTrigger(GameObject triggeredtrigger)
     {
         foreach (MovableTrigger item in MovableTriggers)
