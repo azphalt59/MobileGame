@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75829f08ff313a548b944bdafe3c7bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDuration: 0.1
+  movementDuration: 1
   magicalDestructionDuration: 3
   MagicScrollCount: 0
 --- !u!1001 &365240494

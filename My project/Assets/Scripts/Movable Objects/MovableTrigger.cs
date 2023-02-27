@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MovableTrigger : MonoBehaviour
 {
     GameObject obj;
+    Vector3 newPlayerPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +22,24 @@ public class MovableTrigger : MonoBehaviour
         GridController.Instance.DisableTrigger();
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableMagicalsEnablers();
-        PlayerController.Instance.gameObject.transform.position = obj.transform.position;
-        obj.transform.position = transform.position;
+        PlayerController.Instance.DisablePlayerTrigger();
+        
+
+        Vector3 newObjPos = transform.position;
+        newPlayerPos = obj.transform.position;
+        obj.transform.DOMove(newObjPos, GameManager.Instance.movementDuration).OnComplete(OnObjMoveComplete);
+       
+
         obj.GetComponent<MovableObject>().RefreshColliders();
         GridController.Instance.ExecuteCatsMovement();
     }
-    
+    private void OnObjMoveComplete()
+    {
+        
+        PlayerController.Instance.gameObject.transform.DOMove(newPlayerPos, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
+    }
+    private void OnPlayerMoveComplete()
+    {
+        GridController.Instance.ExecuteCatsMovement();
+    }
 }
