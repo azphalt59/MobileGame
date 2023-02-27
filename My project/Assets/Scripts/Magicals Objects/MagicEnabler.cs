@@ -28,7 +28,7 @@ public class MagicEnabler : MonoBehaviour
     }
     public void MovePlayer()
     {
-        PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration).OnComplete(GridController.Instance.ExecuteCatsMovement).OnComplete(DeleteMagicalObject);
+        PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration).OnComplete(GridController.Instance.ExecuteCatsMovement);
     }
     public void DeleteMagicalObject()
     {
