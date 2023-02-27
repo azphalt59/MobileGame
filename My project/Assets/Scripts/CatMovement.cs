@@ -48,7 +48,7 @@ public class CatMovement : MonoBehaviour
             if (itsPlayer) 
                 return;
 
-            Debug.Log("Il y a un obstacle");
+            Debug.Log(col[0].name + " collide");
             reverse = !reverse;
             mvtIndex = 0;
 
@@ -93,6 +93,16 @@ public class CatMovement : MonoBehaviour
             ReversePath.Add(-CatPattern[mvtIndex]);
         }
         mvtIndex++;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<PlayerDectector>() != null)
+        {
+            other.gameObject.GetComponent<PlayerDectector>().triggerLinkToThis.SetActive(false);
+            other.gameObject.SetActive(false);
+            //Debug.Log(other.name + "   " + other.transform.parent.name);
+        }
     }
     private void OnDrawGizmos()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDectector : MonoBehaviour
 {
     GameObject obj;
-    [SerializeField] private GameObject triggerLinkToThis;
+    [SerializeField] public GameObject triggerLinkToThis;
     [SerializeField] private GameObject interactionEnabler;
     private void Start()
     {
@@ -21,7 +21,7 @@ public class PlayerDectector : MonoBehaviour
         {
             interactionEnabler.SetActive(true);
         }
-        if(other.gameObject.GetComponent<MovableObject>() != null || other.gameObject.GetComponent<MovableObject>() != null)
+        if(other.gameObject.GetComponent<MovableObject>() != null || other.gameObject.GetComponent<MagicDestroyable>() != null || other.gameObject.GetComponent<CatMovement>())
         {
             obj.GetComponent<MovableObject>().HideThisTrigger(triggerLinkToThis);
         }

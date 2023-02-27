@@ -31,7 +31,7 @@ public class MovableTrigger : MonoBehaviour
        
 
         obj.GetComponent<MovableObject>().RefreshColliders();
-        GridController.Instance.ExecuteCatsMovement();
+    
     }
     private void OnObjMoveComplete()
     {

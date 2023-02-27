@@ -17,7 +17,15 @@ public class PlayerTriggerMovement : MonoBehaviour
     private void OnMouseDown()
     {
         //player.transform.position = transform.position;
-        player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
+        if(GridController.Instance.cats.Count != 0)
+        {
+            player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
+        }
+        else
+        {
+            player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
+        }
+        
         player.GetComponent<PlayerController>().DisablePlayerTrigger();
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableMagicalsEnablers();

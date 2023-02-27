@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8630533199115253723}
   - component: {fileID: 8630533199115253700}
   - component: {fileID: 8630533199115253720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8630533199115253701}
-  m_LocalRotation: {x: -0.5742195, y: -0, z: -0, w: 0.8187014}
+  m_LocalRotation: {x: -0.5742195, y: 0, z: 0, w: 0.8187014}
   m_LocalPosition: {x: 5.22, y: -0.22121239, z: 16.426502}
-  m_LocalScale: {x: 1.75, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 2.04, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -70.09, y: 0, z: 0}
 --- !u!33 &8630533199115253722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -111,12 +111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CatPattern:
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 0, y: 0, z: -1}
+  - {x: 0, y: 0, z: -1}
+  - {x: -1, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
-  - {x: -1, y: 0, z: 0}
-  - {x: -1, y: 0, z: 0}
-  - {x: 0, y: 0, z: -1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   ReversePath: []
+  reverse: 0
+  mvtIndex: 0
