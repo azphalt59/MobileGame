@@ -19,6 +19,7 @@ public class MovableTrigger : MonoBehaviour
         obj.GetComponent<MovableObject>().HideTrigger();
         GridController.Instance.DisableTrigger();
         GridController.Instance.DisableInteractionEnablers();
+        GridController.Instance.DisableMagicalsEnablers();
         PlayerController.Instance.gameObject.transform.position = obj.transform.position;
         obj.transform.position = transform.position;
         obj.GetComponent<MovableObject>().RefreshColliders();

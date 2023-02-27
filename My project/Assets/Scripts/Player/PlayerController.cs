@@ -30,6 +30,13 @@ public class PlayerController : MonoBehaviour
             item.gameObject.SetActive(true);
         }
     }
+    public void DisablePlayerTrigger()
+    {
+        foreach (PlayerTriggerMovement item in playerTriggerMovements)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
