@@ -23,6 +23,7 @@ public class InteractionEnabler : MonoBehaviour
     {
         GridController.Instance.DisableTrigger();
         obj.GetComponent<MovableObject>().ShowTrigger(null);
+
         
     }
 }
