@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public LoseCondition LoseCon;
     public float movementDuration = 2f;
     public float magicalDestructionDuration = 3f;
     public int MagicScrollCount = 0;
@@ -16,11 +17,5 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-    }
-    
-    
-    void Update()
-    {
-        
     }
 }
