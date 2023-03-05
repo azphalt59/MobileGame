@@ -28,11 +28,19 @@ public class MagicEnabler : MonoBehaviour
     }
     public void MovePlayer()
     {
-        PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration).OnComplete(GridController.Instance.ExecuteCatsMovement);
+        if (GridController.Instance.cats.Count > 0)
+        {
+            PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration)
+                .OnComplete(GridController.Instance.ExecuteCatsMovement);
+                //.OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
+        } 
+        else
+        {
+            PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration)
+                .OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
+
+        }
     }
-    public void DeleteMagicalObject()
-    {
-        Destroy(transform.parent.gameObject);
-    }
+           
 
 }

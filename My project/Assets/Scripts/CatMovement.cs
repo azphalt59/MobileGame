@@ -39,7 +39,7 @@ public class CatMovement : MonoBehaviour
                 if (col[i].gameObject.GetComponent<PlayerController>() != null)
                 {
                     itsPlayer = true;
-                    Debug.Log("C le player");
+                    //GameManager.Instance.LoseCon.PlayerLose();
                     ExecuteMove(posTarget);
                     break;
                 }
@@ -64,7 +64,6 @@ public class CatMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("pas d'obstacle");
 
         }
        
@@ -102,6 +101,15 @@ public class CatMovement : MonoBehaviour
             other.gameObject.GetComponent<PlayerDectector>().triggerLinkToThis.SetActive(false);
             other.gameObject.SetActive(false);
             //Debug.Log(other.name + "   " + other.transform.parent.name);
+        }
+        
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Hall");
+        if (other.gameObject.GetComponent<PlayerController>() != null)
+        {
+            GameManager.Instance.LoseCon.PlayerLose();
         }
     }
     private void OnDrawGizmos()
