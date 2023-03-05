@@ -23,7 +23,7 @@ public class Grid : MonoBehaviour
     }
     private void Start()
     {
-        GenerateGrid();
+        //GenerateGrid();
     }
     public float SetPlayerSpeed()
     {
