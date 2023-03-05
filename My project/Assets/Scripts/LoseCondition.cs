@@ -19,7 +19,7 @@ public class LoseCondition : MonoBehaviour
     public void Nextlevel()
     {
         Debug.Log("zzz");
-        if ((SceneManager.GetActiveScene().buildIndex) + 1 <= SceneManager.sceneCount)
+        if ((SceneManager.GetActiveScene().buildIndex) + 1 <= SceneManager.sceneCount+1)
         {
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
         }

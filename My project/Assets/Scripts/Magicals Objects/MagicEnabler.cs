@@ -28,6 +28,7 @@ public class MagicEnabler : MonoBehaviour
     }
     public void MovePlayer()
     {
+        PlayerController.Instance.gameObject.transform.LookAt(PlayerController.Instance.gameObject.transform.position + magicalObject.transform.position);
         if (GridController.Instance.cats.Count > 0)
         {
             PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration)

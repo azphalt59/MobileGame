@@ -17,7 +17,11 @@ public class PlayerTriggerMovement : MonoBehaviour
     private void OnMouseDown()
     {
         //player.transform.position = transform.position;
-        if(GridController.Instance.cats.Count != 0)
+        Vector3 dir = transform.localPosition;
+        Debug.Log(dir);
+        PlayerController.Instance.RotatePlayer(dir);
+
+        if (GridController.Instance.cats.Count != 0)
         {
             player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
         }
@@ -35,6 +39,7 @@ public class PlayerTriggerMovement : MonoBehaviour
     public void OnPlayerMoveComplete()
     {
         GridController.Instance.ExecuteCatsMovement();
+        
     }
     private void OnTriggerEnter(Collider other)
     {

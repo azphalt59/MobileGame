@@ -81,6 +81,8 @@ public class CatMovement : MonoBehaviour
         if (reverse)
         {
             posTarget = transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed());
+            transform.LookAt(posTarget);
+            transform.rotation *= Quaternion.Euler(90, 0, 0);
             transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
             ReversePath.RemoveAt(0);
             
@@ -88,6 +90,8 @@ public class CatMovement : MonoBehaviour
         else
         {
             posTarget = transform.position + (CatPattern[mvtIndex] * Grid.Instance.SetPlayerSpeed());
+            transform.LookAt(posTarget);
+            transform.rotation *= Quaternion.Euler(90, 0, 0);
             transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
             ReversePath.Add(-CatPattern[mvtIndex]);
         }
