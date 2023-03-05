@@ -16,6 +16,10 @@ public class PlayerTriggerMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        OnClick();
+    }
+    public void OnClick()
+    {
         //player.transform.position = transform.position;
         Vector3 dir = transform.localPosition;
         Debug.Log(dir);
@@ -29,12 +33,11 @@ public class PlayerTriggerMovement : MonoBehaviour
         {
             player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
         }
-        
+
         player.GetComponent<PlayerController>().DisablePlayerTrigger();
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableMagicalsEnablers();
         GridController.Instance.DisableTrigger();
-
     }
     public void OnPlayerMoveComplete()
     {
@@ -57,5 +60,27 @@ public class PlayerTriggerMovement : MonoBehaviour
                 other.gameObject.GetComponent<MagicDestroyable>().ActionEnabler.SetActive(true);
             }
         }
+    }
+
+    private void Update()
+    {
+        if (Input.touches.Length > 0)
+        {
+            Touch touch = Input.touches[0];
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // L'objet a été touché
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        OnClick();
+                    }
+                }
+            }
+        }
+
     }
 }
