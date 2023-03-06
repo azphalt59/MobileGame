@@ -20,7 +20,6 @@ public class PlayerTriggerMovement : MonoBehaviour
     }
     public void OnClick()
     {
-        player.transform.position = transform.position;
         Vector3 dir = transform.localPosition;
         Debug.Log(dir);
         PlayerController.Instance.RotatePlayer(dir);
@@ -61,26 +60,26 @@ public class PlayerTriggerMovement : MonoBehaviour
             }
         }
     }
+    
+    //private void Update()
+    //{
+    //    if (Input.touches.Length > 0)
+    //    {
+    //        Touch touch = Input.touches[0];
+    //        if (touch.phase == TouchPhase.Began)
+    //        {
+    //            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+    //            RaycastHit hit;
+    //            if (Physics.Raycast(ray, out hit))
+    //            {
+    //                // L'objet a été touché
+    //                if (hit.collider.gameObject == gameObject)
+    //                {
+    //                    OnClick();
+    //                }
+    //            }
+    //        }
+    //    }
 
-    private void Update()
-    {
-        if (Input.touches.Length > 0)
-        {
-            Touch touch = Input.touches[0];
-            if (touch.phase == TouchPhase.Began)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
-                {
-                    // L'objet a été touché
-                    if (hit.collider.gameObject == gameObject)
-                    {
-                        OnClick();
-                    }
-                }
-            }
-        }
-
-    }
+    //}
 }

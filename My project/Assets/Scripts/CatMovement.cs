@@ -28,6 +28,10 @@ public class CatMovement : MonoBehaviour
         }
         else
         {
+            if(mvtIndex == CatPattern.Count)
+            {
+                mvtIndex = 0;
+            }
             newPos = CatPattern[mvtIndex];
         }
         if (Physics.CheckSphere(transform.position + (newPos * Grid.Instance.SetPlayerSpeed()), 0.2f))
@@ -36,10 +40,9 @@ public class CatMovement : MonoBehaviour
             bool itsPlayer = false;
             for (int i = 0; i < col.Length; i++)
             {
-                if (col[i].gameObject.GetComponent<PlayerController>() != null)
+                if (col[i].gameObject.GetComponent<PlayerController>() != null || col[i].gameObject.GetComponent<Cheese>() != null)
                 {
                     itsPlayer = true;
-                    //GameManager.Instance.LoseCon.PlayerLose();
                     ExecuteMove(posTarget);
                     break;
                 }
@@ -66,8 +69,7 @@ public class CatMovement : MonoBehaviour
         {
 
         }
-       
-            
+         
         ExecuteMove(posTarget);
 
     }
@@ -104,7 +106,6 @@ public class CatMovement : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerDectector>().triggerLinkToThis.SetActive(false);
             other.gameObject.SetActive(false);
-            //Debug.Log(other.name + "   " + other.transform.parent.name);
         }
         
     }

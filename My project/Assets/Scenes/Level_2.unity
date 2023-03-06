@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoseCon: {fileID: 443326223}
-  movementDuration: 1
+  movementDuration: 0.1
   magicalDestructionDuration: 3
   MagicScrollCount: 0
   haveCheese: 0
@@ -6060,8 +6060,12 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8630533199115253720, guid: ea9e86b7b21407a4187dae8941285750, type: 3}
-      propertyPath: CatPattern.Array.data[8].z
+      propertyPath: CatPattern.Array.data[8].x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630533199115253720, guid: ea9e86b7b21407a4187dae8941285750, type: 3}
+      propertyPath: CatPattern.Array.data[8].z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8630533199115253721, guid: ea9e86b7b21407a4187dae8941285750, type: 3}
       propertyPath: m_RootOrder
