@@ -39,7 +39,7 @@ public class CatMovement : MonoBehaviour
                 if (col[i].gameObject.GetComponent<PlayerController>() != null)
                 {
                     itsPlayer = true;
-                    Debug.Log("C le player");
+                    //GameManager.Instance.LoseCon.PlayerLose();
                     ExecuteMove(posTarget);
                     break;
                 }
@@ -48,7 +48,7 @@ public class CatMovement : MonoBehaviour
             if (itsPlayer) 
                 return;
 
-            Debug.Log("Il y a un obstacle");
+            Debug.Log(col[0].name + " collide");
             reverse = !reverse;
             mvtIndex = 0;
 
@@ -64,7 +64,6 @@ public class CatMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("pas d'obstacle");
 
         }
        
@@ -82,6 +81,8 @@ public class CatMovement : MonoBehaviour
         if (reverse)
         {
             posTarget = transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed());
+            transform.LookAt(posTarget);
+            transform.rotation *= Quaternion.Euler(90, 0, 0);
             transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
             ReversePath.RemoveAt(0);
             
@@ -89,10 +90,31 @@ public class CatMovement : MonoBehaviour
         else
         {
             posTarget = transform.position + (CatPattern[mvtIndex] * Grid.Instance.SetPlayerSpeed());
+            transform.LookAt(posTarget);
+            transform.rotation *= Quaternion.Euler(90, 0, 0);
             transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
             ReversePath.Add(-CatPattern[mvtIndex]);
         }
         mvtIndex++;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<PlayerDectector>() != null)
+        {
+            other.gameObject.GetComponent<PlayerDectector>().triggerLinkToThis.SetActive(false);
+            other.gameObject.SetActive(false);
+            //Debug.Log(other.name + "   " + other.transform.parent.name);
+        }
+        
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Hall");
+        if (other.gameObject.GetComponent<PlayerController>() != null)
+        {
+            GameManager.Instance.LoseCon.PlayerLose();
+        }
     }
     private void OnDrawGizmos()
     {

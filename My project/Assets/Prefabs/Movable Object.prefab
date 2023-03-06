@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5218727714091211103}
   - component: {fileID: 4445407626311214337}
   - component: {fileID: 830821240882203650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bot Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 139494471664110449}
   - component: {fileID: 436185771314121929}
   - component: {fileID: 2007309946511158023}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,6 +451,7 @@ MonoBehaviour:
   - {fileID: 436185771314121929}
   - {fileID: 2068018410880135279}
   PlayerDectectors: []
+  DetectorsCollider: []
   InteractionEnabler: {fileID: 505213052836042391}
 --- !u!1 &1797777822920990748
 GameObject:
@@ -465,7 +466,7 @@ GameObject:
   - component: {fileID: 8469466455494982022}
   - component: {fileID: 572333713811744943}
   - component: {fileID: 2891333723361825728}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +552,7 @@ GameObject:
   - component: {fileID: 6296577905364601085}
   - component: {fileID: 3957713653735838449}
   - component: {fileID: 2657456617352196223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +638,7 @@ GameObject:
   - component: {fileID: 1246268057116670958}
   - component: {fileID: 6616865021105474306}
   - component: {fileID: 1488858498519862840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665922684822484610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +760,7 @@ GameObject:
   - component: {fileID: 5233731695141008755}
   - component: {fileID: 7519259267786832559}
   - component: {fileID: 5955971993969236319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +883,7 @@ GameObject:
   - component: {fileID: 7755166554671371227}
   - component: {fileID: 8260065595081471140}
   - component: {fileID: 4644127207654369240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2734188641140374864}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger Deplacement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1041,7 @@ GameObject:
   - component: {fileID: 5545974573520476964}
   - component: {fileID: 2068018410880135279}
   - component: {fileID: 91895654179230859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bot Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

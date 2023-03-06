@@ -31,7 +31,7 @@ public class MovableTrigger : MonoBehaviour
        
 
         obj.GetComponent<MovableObject>().RefreshColliders();
-        GridController.Instance.ExecuteCatsMovement();
+    
     }
     private void OnObjMoveComplete()
     {
@@ -40,6 +40,16 @@ public class MovableTrigger : MonoBehaviour
     }
     private void OnPlayerMoveComplete()
     {
-        GridController.Instance.ExecuteCatsMovement();
+        if (GridController.Instance.cats.Count > 0)
+        {
+            Debug.Log("ya des chats");
+            GridController.Instance.ExecuteCatsMovement();
+        } 
+        else
+        {
+            Debug.Log("pas de chat");
+            PlayerController.Instance.ResetPlayerTriggerMovement();
+        }
+            
     }
 }
