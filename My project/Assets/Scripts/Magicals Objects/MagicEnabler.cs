@@ -6,10 +6,12 @@ using DG.Tweening;
 public class MagicEnabler : MonoBehaviour
 {
     [SerializeField] private GameObject magicalObject;
+    [SerializeField] private ParticleSystem FireFx;
 
     private void OnEnable()
     {
-        GridController.Instance.magicEnablers.Add(this);
+        if(GridController.Instance != null)
+            GridController.Instance.magicEnablers.Add(this);
     }
 #if UNITY_EDITOR
     private void OnMouseDown()
@@ -31,6 +33,7 @@ public class MagicEnabler : MonoBehaviour
     {
         GameManager.Instance.MagicScrollCount--;
         PlayerController.Instance.RotatePlayer(magicalObject.transform.position - PlayerController.Instance.PlayerMesh.gameObject.transform.position);
+        FireFx.Play();
         AudioManager.Instance.Play("DestructionBloc");
         magicalObject.transform.DOScale(0, GameManager.Instance.magicalDestructionDuration).OnComplete(MovePlayer);
     }

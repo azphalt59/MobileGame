@@ -2202,8 +2202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoseCon: {fileID: 1044119011}
   UI: {fileID: 1044119012}
-  movementDuration: 0.5
-  magicalDestructionDuration: 3
+  movementDuration: 0.9
+  magicalDestructionDuration: 4
   MagicScrollCount: 0
   haveCheese: 0
 --- !u!1001 &332245964

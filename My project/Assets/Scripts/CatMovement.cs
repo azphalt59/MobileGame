@@ -126,26 +126,26 @@ public class CatMovement : MonoBehaviour
         }
     }
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Vector3 currentPos = transform.position;
-        Gizmos.color = Color.green;
-        for (int i = 0; i < CatPattern.Count; i++)
-        {
-            if (CatPattern.Count == 0) return;
-            Gizmos.DrawLine(currentPos, currentPos + CatPattern[i] * Grid.Instance.SetPlayerSpeed());
-            currentPos += CatPattern[i] * Grid.Instance.SetPlayerSpeed();
-        }
-        Gizmos.color = Color.red;
-        if (reverse)
-        {
-            if (ReversePath.Count == 0)
-                return;
-            Gizmos.DrawSphere(transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
-        }
+    //private void OnDrawGizmos()
+    //{
+    //    Vector3 currentPos = transform.position;
+    //    Gizmos.color = Color.green;
+    //    for (int i = 0; i < CatPattern.Count; i++)
+    //    {
+    //        if (CatPattern.Count == 0) return;
+    //        Gizmos.DrawLine(currentPos, currentPos + CatPattern[i] * Grid.Instance.SetPlayerSpeed());
+    //        currentPos += CatPattern[i] * Grid.Instance.SetPlayerSpeed();
+    //    }
+    //    Gizmos.color = Color.red;
+    //    if (reverse)
+    //    {
+    //        if (ReversePath.Count == 0)
+    //            return;
+    //        Gizmos.DrawSphere(transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
+    //    }
 
-        else
-            Gizmos.DrawSphere(transform.position + (CatPattern[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
-    }
+    //    else
+    //        Gizmos.DrawSphere(transform.position + (CatPattern[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
+    //}
 #endif
 }

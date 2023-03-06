@@ -3718,7 +3718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614123850359913041, guid: 6b697b7a3ec3446488418d6cc81aef24, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5614123850359913041, guid: 6b697b7a3ec3446488418d6cc81aef24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5228,8 +5228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoseCon: {fileID: 443326223}
   UI: {fileID: 443326224}
-  movementDuration: 1
-  magicalDestructionDuration: 2
+  movementDuration: 0.9
+  magicalDestructionDuration: 4
   MagicScrollCount: 0
   haveCheese: 0
 --- !u!1001 &322699381
@@ -12368,7 +12368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614123850359913041, guid: 6b697b7a3ec3446488418d6cc81aef24, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5614123850359913041, guid: 6b697b7a3ec3446488418d6cc81aef24, type: 3}
       propertyPath: m_LocalPosition.x
