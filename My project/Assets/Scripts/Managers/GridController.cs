@@ -44,6 +44,9 @@ public class GridController : MonoBehaviour
     }
     public void ExecuteCatsMovement()
     {
+        //PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
+        //PlayerController.Instance.PlayerAnimator.SetBool("Push", false);
+
         foreach (CatMovement cat in cats)
         {
             cat.ExecutePath();

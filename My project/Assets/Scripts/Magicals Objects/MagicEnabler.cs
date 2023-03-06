@@ -25,19 +25,24 @@ public class MagicEnabler : MonoBehaviour
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableTrigger();
         UseMagicScroll();
+        PlayerController.Instance.PlayerAnimator.SetBool("Push", true);
     }
     public void UseMagicScroll()
     {
         GameManager.Instance.MagicScrollCount--;
+        PlayerController.Instance.RotatePlayer(magicalObject.transform.position - PlayerController.Instance.PlayerMesh.gameObject.transform.position);
         magicalObject.transform.DOScale(0, GameManager.Instance.magicalDestructionDuration).OnComplete(MovePlayer);
     }
     public void MovePlayer()
     {
-        PlayerController.Instance.RotatePlayer(magicalObject.transform.position - PlayerController.Instance.gameObject.transform.position);
+        PlayerController.Instance.PlayerAnimator.SetBool("Push", false);
+        PlayerController.Instance.PlayerAnimator.SetBool("Run", true);
+       
+      
         if (GridController.Instance.cats.Count > 0)
         {
             PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration)
-                .OnComplete(GridController.Instance.ExecuteCatsMovement);
+                .OnComplete(OnMoveComplete);
                 //.OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
         } 
         else
@@ -46,6 +51,12 @@ public class MagicEnabler : MonoBehaviour
                 .OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
 
         }
+    }
+
+    public void OnMoveComplete()
+    {
+        PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
+        GridController.Instance.ExecuteCatsMovement();
     }
 
     private void Update()
