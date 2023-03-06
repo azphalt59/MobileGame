@@ -18,15 +18,14 @@ public class LoseCondition : MonoBehaviour
     }
     public void Nextlevel()
     {
-        Debug.Log("zzz");
-        if ((SceneManager.GetActiveScene().buildIndex) + 1 <= SceneManager.sceneCount+1)
+        if ((SceneManager.GetActiveScene().buildIndex) + 1 <= SceneManager.sceneCountInBuildSettings+1)
         {
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex) + 1);
         }
         else
         {
             Debug.Log((SceneManager.GetActiveScene().buildIndex) + 1 + " est l'id de la prochaine scène");
-            Debug.Log(SceneManager.sceneCount + " est le nombre total de scènes");
+            Debug.Log(SceneManager.sceneCountInBuildSettings + " est le nombre total de scènes");
         }
     }
     public void PlayerWin()
