@@ -160,8 +160,8 @@ GameObject:
   - component: {fileID: 6530124008006180973}
   - component: {fileID: 1829852092084848523}
   - component: {fileID: 4884168029488380654}
-  - component: {fileID: 4189799049983718809}
   - component: {fileID: 6640474918039864877}
+  - component: {fileID: 6014076243523246007}
   m_Layer: 0
   m_Name: right sphere
   m_TagString: Untagged
@@ -235,19 +235,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4189799049983718809
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445426738961648827}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6640474918039864877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +247,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1017d9c534aa9d54497be2e0120a011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6014076243523246007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445426738961648827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 1, z: 3.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2177056666645772572
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,8 +271,8 @@ GameObject:
   - component: {fileID: 5371655376029986756}
   - component: {fileID: 2135363954183308610}
   - component: {fileID: 8537441797709622416}
-  - component: {fileID: 7246621708406577865}
   - component: {fileID: 2450571990154272794}
+  - component: {fileID: 155549059449939243}
   m_Layer: 0
   m_Name: bot sphere
   m_TagString: Untagged
@@ -346,19 +346,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7246621708406577865
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2177056666645772572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2450571990154272794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +358,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1017d9c534aa9d54497be2e0120a011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &155549059449939243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177056666645772572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 1, z: 3.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2286420475046976344
 GameObject:
   m_ObjectHideFlags: 0
@@ -10200,8 +10200,8 @@ GameObject:
   - component: {fileID: 8502523020214306665}
   - component: {fileID: 8572358344952615737}
   - component: {fileID: 1949579583462301578}
-  - component: {fileID: 771498294835051432}
   - component: {fileID: 3840918177757067758}
+  - component: {fileID: 6692116842010732627}
   m_Layer: 0
   m_Name: left sphere
   m_TagString: Untagged
@@ -10275,19 +10275,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &771498294835051432
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3090821183987900913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3840918177757067758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10300,6 +10287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1017d9c534aa9d54497be2e0120a011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6692116842010732627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090821183987900913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 1, z: 3.5}
+  m_Center: {x: -0.00000023841858, y: 0, z: 0}
 --- !u!1 &4042770054003167458
 GameObject:
   m_ObjectHideFlags: 0
@@ -15276,8 +15276,8 @@ GameObject:
   - component: {fileID: 1132960468594544568}
   - component: {fileID: 3746867132493185271}
   - component: {fileID: 7135281446555636220}
-  - component: {fileID: 1552634135217351355}
   - component: {fileID: 7920940051257782204}
+  - component: {fileID: 1980273763491166524}
   m_Layer: 0
   m_Name: top sphere
   m_TagString: Untagged
@@ -15351,19 +15351,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1552634135217351355
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028205122531279524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7920940051257782204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15376,6 +15363,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1017d9c534aa9d54497be2e0120a011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1980273763491166524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028205122531279524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 1, z: 3.5}
+  m_Center: {x: 0, y: 0, z: 0.0000038146973}
 --- !u!1 &7656937552424443284
 GameObject:
   m_ObjectHideFlags: 0

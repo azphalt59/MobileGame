@@ -41,7 +41,16 @@ public class InteractionEnabler : MonoBehaviour
 
             if (Physics.CheckSphere(currentTrigger.transform.position - (obj.transform.position - currentTrigger.transform.position), 2))
             {
-                currentTrigger.SetActive(false);
+                Collider[] hit = Physics.OverlapSphere(currentTrigger.transform.position - (obj.transform.position - currentTrigger.transform.position), 2);
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if(hit[i].gameObject.GetComponent<PlayerDectector>() != null || hit[i].gameObject.GetComponent<ObjectsTrigger>() != null)
+                    {
+                        continue;
+                    }
+                    currentTrigger.SetActive(false);
+                }
+                
             }
         }
         else
