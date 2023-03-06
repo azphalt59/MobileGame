@@ -18,20 +18,23 @@ public class MovableTrigger : MonoBehaviour
 
     private void OnMouseDown()
     {
+        OnClick();
+    }
+    public void OnClick()
+    {
         obj.GetComponent<MovableObject>().HideTrigger();
         GridController.Instance.DisableTrigger();
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableMagicalsEnablers();
         PlayerController.Instance.DisablePlayerTrigger();
-        
+
 
         Vector3 newObjPos = transform.position;
         newPlayerPos = obj.transform.position;
         obj.transform.DOMove(newObjPos, GameManager.Instance.movementDuration).OnComplete(OnObjMoveComplete);
-       
+
 
         obj.GetComponent<MovableObject>().RefreshColliders();
-    
     }
     private void OnObjMoveComplete()
     {
@@ -51,5 +54,26 @@ public class MovableTrigger : MonoBehaviour
             PlayerController.Instance.ResetPlayerTriggerMovement();
         }
             
+    }
+    private void Update()
+    {
+        if (Input.touches.Length > 0)
+        {
+            Touch touch = Input.touches[0];
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // L'objet a été touché
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        OnClick();
+                    }
+                }
+            }
+        }
+
     }
 }

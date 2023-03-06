@@ -13,6 +13,10 @@ public class MagicEnabler : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        OnClick();
+    }
+    public void OnClick()
+    {
         gameObject.SetActive(false);
         PlayerController.Instance.DisablePlayerTrigger();
         GridController.Instance.DisableMagicalsEnablers();
@@ -20,7 +24,6 @@ public class MagicEnabler : MonoBehaviour
         GridController.Instance.DisableTrigger();
         UseMagicScroll();
     }
-   
     public void UseMagicScroll()
     {
         GameManager.Instance.MagicScrollCount--;
@@ -42,6 +45,28 @@ public class MagicEnabler : MonoBehaviour
 
         }
     }
-           
+
+    private void Update()
+    {
+        if (Input.touches.Length > 0)
+        {
+            Touch touch = Input.touches[0];
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // L'objet a été touché
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        OnClick();
+                    }
+                }
+            }
+        }
+
+    }
+
 
 }
