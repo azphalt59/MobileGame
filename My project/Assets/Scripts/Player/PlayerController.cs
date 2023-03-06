@@ -49,22 +49,18 @@ public class PlayerController : MonoBehaviour
         if(mvtTarget.z < 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 90, 0);
-            Debug.Log(90);
         }
         if (mvtTarget.z > 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 270, 0);
-            Debug.Log(270);
         }
         if (mvtTarget.x < 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 180, 0);
-            Debug.Log(180);
         }
         if (mvtTarget.x > 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 0, 0);
-            Debug.Log(0);
         }
     }
 }

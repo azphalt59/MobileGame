@@ -5,6 +5,7 @@ using System.Linq;
 using DG.Tweening;
 public class CatMovement : MonoBehaviour
 {
+    public Animator CatAnimator;
     public List<Vector3> CatPattern;
     public List<Vector3> ReversePath;
     public bool reverse = false;
@@ -51,7 +52,7 @@ public class CatMovement : MonoBehaviour
             if (itsPlayer) 
                 return;
 
-            Debug.Log(col[0].name + " collide");
+            
             reverse = !reverse;
             mvtIndex = 0;
 
@@ -84,22 +85,27 @@ public class CatMovement : MonoBehaviour
         {
             posTarget = transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed());
             transform.LookAt(posTarget);
-            transform.rotation *= Quaternion.Euler(90, 0, 0);
-            transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
+            CatAnimator.SetBool("Run", true);
+            transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(OnCompleteMovement);
             ReversePath.RemoveAt(0);
             
         }
         else
         {
+            CatAnimator.SetBool("Run", true);
             posTarget = transform.position + (CatPattern[mvtIndex] * Grid.Instance.SetPlayerSpeed());
             transform.LookAt(posTarget);
-            transform.rotation *= Quaternion.Euler(90, 0, 0);
-            transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
+            transform.DOMove(posTarget, GameManager.Instance.movementDuration).OnComplete(OnCompleteMovement);
             ReversePath.Add(-CatPattern[mvtIndex]);
         }
         mvtIndex++;
     }
 
+    public void OnCompleteMovement()
+    {
+        CatAnimator.SetBool("Run", false);
+        PlayerController.Instance.ResetPlayerTriggerMovement();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<PlayerDectector>() != null)
@@ -118,26 +124,26 @@ public class CatMovement : MonoBehaviour
         }
     }
 #if UNITY_EDITOR
-    //private void OnDrawGizmos()
-    //{
-    //    Vector3 currentPos = transform.position;
-    //    Gizmos.color = Color.green;
-    //    for (int i = 0; i < CatPattern.Count; i++)
-    //    {
-    //        if (CatPattern.Count == 0) return;
-    //        Gizmos.DrawLine(currentPos, currentPos + CatPattern[i] * Grid.Instance.SetPlayerSpeed());
-    //        currentPos += CatPattern[i] * Grid.Instance.SetPlayerSpeed();
-    //    }
-    //    Gizmos.color = Color.red;
-    //    if (reverse)
-    //    {
-    //        if (ReversePath.Count == 0)
-    //            return;
-    //        Gizmos.DrawSphere(transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
-    //    }
-           
-    //    else
-    //        Gizmos.DrawSphere(transform.position + (CatPattern[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
-    //}
+    private void OnDrawGizmos()
+    {
+        Vector3 currentPos = transform.position;
+        Gizmos.color = Color.green;
+        for (int i = 0; i < CatPattern.Count; i++)
+        {
+            if (CatPattern.Count == 0) return;
+            Gizmos.DrawLine(currentPos, currentPos + CatPattern[i] * Grid.Instance.SetPlayerSpeed());
+            currentPos += CatPattern[i] * Grid.Instance.SetPlayerSpeed();
+        }
+        Gizmos.color = Color.red;
+        if (reverse)
+        {
+            if (ReversePath.Count == 0)
+                return;
+            Gizmos.DrawSphere(transform.position + (ReversePath[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
+        }
+
+        else
+            Gizmos.DrawSphere(transform.position + (CatPattern[0] * Grid.Instance.SetPlayerSpeed()), 0.2f);
+    }
 #endif
 }
