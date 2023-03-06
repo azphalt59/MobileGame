@@ -3,7 +3,27 @@ guid: 2d94d73b756532f47ac251c3e9f0f44c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chat_Valier_Low
+    second: {fileID: 2100000, guid: ad7d621c83492134c9af864c5b73833e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vetement
+    second: {fileID: 2100000, guid: 0bd2d99d376dfee4984795bed777711a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yeux
+    second: {fileID: 2100000, guid: 8b1ebf9f2e7c2cc469e54699c8701df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armure_1
+    second: {fileID: 2100000, guid: accb6038c5779864e900e396478248d8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
