@@ -27,10 +27,12 @@ public class PlayerTriggerMovement : MonoBehaviour
 
         if (GridController.Instance.cats.Count != 0)
         {
+            PlayerController.Instance.PlayerAnimator.SetBool("Run", true);
             player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
         }
         else
         {
+            PlayerController.Instance.PlayerAnimator.SetBool("Run", true);
             player.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(PlayerController.Instance.ResetPlayerTriggerMovement);
         }
 
@@ -41,6 +43,7 @@ public class PlayerTriggerMovement : MonoBehaviour
     }
     public void OnPlayerMoveComplete()
     {
+        PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
         GridController.Instance.ExecuteCatsMovement();
         
     }

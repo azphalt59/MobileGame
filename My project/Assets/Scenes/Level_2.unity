@@ -2300,8 +2300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoseCon: {fileID: 443326223}
   UI: {fileID: 443326224}
-  movementDuration: 0.1
-  magicalDestructionDuration: 3
+  movementDuration: 1
+  magicalDestructionDuration: 2
   MagicScrollCount: 0
   haveCheese: 0
 --- !u!1001 &322699381
@@ -13192,14 +13192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6822988912417441071, guid: 8c5f510756cb6534fbc44daca7fb4a9d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678244605748516498, guid: 8c5f510756cb6534fbc44daca7fb4a9d, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8424957311284671345, guid: 8c5f510756cb6534fbc44daca7fb4a9d, type: 3}
       propertyPath: m_Name
       value: Player
