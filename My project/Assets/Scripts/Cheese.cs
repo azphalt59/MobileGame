@@ -8,6 +8,7 @@ public class Cheese : MonoBehaviour, IPickable
     {
         GameManager.Instance.haveCheese = true;
         GameManager.Instance.UI.HaveCheese();
+        AudioManager.Instance.Play("CheesePickup");
     }
 
     // Start is called before the first frame update
