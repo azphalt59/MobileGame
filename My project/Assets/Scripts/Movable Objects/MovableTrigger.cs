@@ -54,6 +54,7 @@ public class MovableTrigger : MonoBehaviour
             Vector3 newObjPos = transform.position;
             newPlayerPos = obj.transform.position;
             PlayerController.Instance.PlayerAnimator.SetBool("Push", true);
+            AudioManager.Instance.Play("TireBloc");
             obj.transform.DOMove(newObjPos, GameManager.Instance.movementDuration).OnComplete(OnObjMoveComplete);
         }
         
@@ -68,6 +69,7 @@ public class MovableTrigger : MonoBehaviour
         //}
         
         PlayerController.Instance.PlayerAnimator.SetBool("Push", true);
+        AudioManager.Instance.Play("TireBloc");
         obj.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
     }
     private void OnObjMoveComplete()

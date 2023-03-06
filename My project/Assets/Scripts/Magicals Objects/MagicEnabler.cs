@@ -31,6 +31,7 @@ public class MagicEnabler : MonoBehaviour
     {
         GameManager.Instance.MagicScrollCount--;
         PlayerController.Instance.RotatePlayer(magicalObject.transform.position - PlayerController.Instance.PlayerMesh.gameObject.transform.position);
+        AudioManager.Instance.Play("DestructionBloc");
         magicalObject.transform.DOScale(0, GameManager.Instance.magicalDestructionDuration).OnComplete(MovePlayer);
     }
     public void MovePlayer()
