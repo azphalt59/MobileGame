@@ -7,7 +7,7 @@ using TMPro;
 public class CheeseScrollUI : MonoBehaviour
 {
     [SerializeField] private GameObject cheeseImage;
-    [SerializeField] private TextMeshProUGUI scrollCountText;
+    [SerializeField] private GameObject scrollImage;
     public void HaveCheese()
     {
         cheeseImage.SetActive(true);
@@ -15,6 +15,11 @@ public class CheeseScrollUI : MonoBehaviour
 
     private void Update()
     {
-        scrollCountText.text = " " + GameManager.Instance.MagicScrollCount;
+        if (GameManager.Instance.MagicScrollCount > 0)
+        {
+            scrollImage.SetActive(true);
+        }
+        else
+            scrollImage.SetActive(false);
     }
 }
