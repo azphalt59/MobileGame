@@ -20,12 +20,14 @@ public class InteractionEnabler : MonoBehaviour
         obj = transform.parent.gameObject;
         GridController.Instance.interactionEnablers.Add(this);
     }
-    
+
     // Update is called once per frame
+#if UNITY_EDITOR
     private void OnMouseDown()
     {
         OnClick();
     }
+#endif
     public void OnClick()
     {
         isActive = !isActive;

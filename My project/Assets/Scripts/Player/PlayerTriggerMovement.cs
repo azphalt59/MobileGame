@@ -14,10 +14,12 @@ public class PlayerTriggerMovement : MonoBehaviour
         transform.localPosition = new Vector3(transform.localPosition.x * scale, transform.localPosition.y, transform.localPosition.z * scale);
     }
 
+#if UNITY_EDITOR
     private void OnMouseDown()
     {
         OnClick();
     }
+#endif
     public void OnClick()
     {
         Vector3 dir = transform.localPosition;

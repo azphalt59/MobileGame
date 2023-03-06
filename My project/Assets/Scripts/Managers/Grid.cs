@@ -51,17 +51,19 @@ public class Grid : MonoBehaviour
         }
 
     }
-    private void OnDrawGizmos()
-    {
-        for (int i = 0; i < rows + 1; i++)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(new Vector3(0, 0, cellSize * i) + gridOffset, new Vector3(cellSize * cols, 0, cellSize * i) + gridOffset);
-        }
-        for (int i = 0; i < cols + 1; i++)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(new Vector3(cellSize * i, 0, 0) + gridOffset, new Vector3(cellSize * i, 0, cellSize * rows) + gridOffset);
-        }
-    }
+#if UNITY_EDITOR
+    //private void OnDrawGizmos()
+    //{
+    //    for (int i = 0; i < rows + 1; i++)
+    //    {
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawLine(new Vector3(0, 0, cellSize * i) + gridOffset, new Vector3(cellSize * cols, 0, cellSize * i) + gridOffset);
+    //    }
+    //    for (int i = 0; i < cols + 1; i++)
+    //    {
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawLine(new Vector3(cellSize * i, 0, 0) + gridOffset, new Vector3(cellSize * i, 0, cellSize * rows) + gridOffset);
+    //    }
+    //}
+#endif
 }
