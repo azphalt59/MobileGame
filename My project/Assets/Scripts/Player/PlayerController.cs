@@ -30,6 +30,13 @@ public class PlayerController : MonoBehaviour
             item.gameObject.SetActive(true);
         }
     }
+    public void CheckBehindCol(Vector3 BehindPos)
+    {
+        if (Physics.CheckSphere(transform.position, 2))
+        {
+
+        }
+    }
     public void DisablePlayerTrigger()
     {
         foreach (PlayerTriggerMovement item in playerTriggerMovements)

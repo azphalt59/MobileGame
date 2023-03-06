@@ -35,12 +35,14 @@ public class MovableTrigger : MonoBehaviour
         GridController.Instance.DisableInteractionEnablers();
         GridController.Instance.DisableMagicalsEnablers();
         PlayerController.Instance.DisablePlayerTrigger();
-
+        
         if(obj.GetComponent<MovableObject>().InteractionEnabler.GetComponent<InteractionEnabler>().indexPlayer == TriggerIndex)
         {
-            Debug.Log("pull");
             Vector3 objMvt = obj.transform.position - transform.position;
-            Debug.Log(objMvt);
+           
+            //Debug.Log(transform.position - (obj.transform.position - transform.position) * 2);
+            //Debug.Log(objMvt);
+
             PlayerController.Instance.RotatePlayer(obj.transform.position - PlayerController.Instance.gameObject.transform.position);
             PlayerController.Instance.gameObject.transform.DOMove(PlayerController.Instance.gameObject.transform.position - objMvt, GameManager.Instance.movementDuration).OnComplete(PullObject);
         }
@@ -74,6 +76,13 @@ public class MovableTrigger : MonoBehaviour
         }
             
     }
+    public void CheckBehindCol()
+    {
+        if(TriggerIndex == 0)
+        {
+
+        }
+    }
     private void Update()
     {
         if (Input.touches.Length > 0)
@@ -95,4 +104,5 @@ public class MovableTrigger : MonoBehaviour
         }
 
     }
+    
 }

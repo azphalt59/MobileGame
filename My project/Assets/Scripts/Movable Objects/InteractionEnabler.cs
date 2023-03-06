@@ -8,6 +8,7 @@ public class InteractionEnabler : MonoBehaviour
     GameObject player;
     public bool isActive = false;
     public int indexPlayer = 0;
+    public GameObject currentTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +33,14 @@ public class InteractionEnabler : MonoBehaviour
         {
             PlayerController.Instance.DisablePlayerTrigger();
             GridController.Instance.DisableTrigger();
+
             obj.GetComponent<MovableObject>().ShowTrigger(null);
             obj.GetComponent<MovableObject>().HideSideTrigger(indexPlayer);
+
+            if (Physics.CheckSphere(currentTrigger.transform.position - (obj.transform.position - currentTrigger.transform.position), 2))
+            {
+                currentTrigger.SetActive(false);
+            }
         }
         else
         {
@@ -45,6 +52,7 @@ public class InteractionEnabler : MonoBehaviour
     }
     private void Update()
     {
+        currentTrigger = obj.GetComponent<MovableObject>().MovableTriggers[indexPlayer].gameObject;
         if (Input.touches.Length > 0)
         {
             Touch touch = Input.touches[0];

@@ -20252,8 +20252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTriggerMovements:
-  - {fileID: 6640474918039864877}
   - {fileID: 3840918177757067758}
+  - {fileID: 6640474918039864877}
   - {fileID: 7920940051257782204}
   - {fileID: 2450571990154272794}
   PlayerMesh: {fileID: 4763821356442642721}
