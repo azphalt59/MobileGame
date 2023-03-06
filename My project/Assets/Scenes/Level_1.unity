@@ -4224,6 +4224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 149478959808755314, guid: 46917154ef66fc048bedb93ce037c35a, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2705826932672529038, guid: 46917154ef66fc048bedb93ce037c35a, type: 3}
       propertyPath: m_Name
       value: Magic Scroll (2)
@@ -11520,10 +11524,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 722910347, guid: 8c5f510756cb6534fbc44daca7fb4a9d, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8424957311284671345, guid: 8c5f510756cb6534fbc44daca7fb4a9d, type: 3}
       propertyPath: m_Name
       value: Player

@@ -9271,7 +9271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1051984417
 PrefabInstance:
@@ -16515,7 +16515,7 @@ Transform:
   - {fileID: 1527564109}
   - {fileID: 321026174}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2073504938
 PrefabInstance:
@@ -17528,8 +17528,8 @@ MonoBehaviour:
   m_LightLayerMask: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 327.7, y: 186.4}
-  m_LightCookieOffset: {x: -107.3, y: 0}
+  m_LightCookieSize: {x: 231.5, y: 186.4}
+  m_LightCookieOffset: {x: 15.1, y: 0}
 --- !u!4 &1859044165313829227
 Transform:
   m_ObjectHideFlags: 0
