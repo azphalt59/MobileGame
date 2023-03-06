@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8195036349937568231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8195036349937568229}
+  - component: {fileID: 8195036349937568230}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8195036349937568229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195036349937568231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.91505, y: 9.8424, z: 32.61635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8195036349937568230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195036349937568231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eadfee9e0a4cb4c97eb48acceedcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: CheesePickup
+    clip: {fileID: 8300000, guid: 770bb9e6a234f9d4d9f1262f83fdc167, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: CatCatch
+    clip: {fileID: 8300000, guid: 752df63cb42038647aec33c18a2c543c, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: PushBloc
+    clip: {fileID: 8300000, guid: c841c9dc7ab9e354ab9e69700028ff44, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: TireBloc
+    clip: {fileID: 8300000, guid: 426649887b38a7d4d92926405e0b4e9b, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: DestructionBloc
+    clip: {fileID: 8300000, guid: 480f72481959bbc4a8c3df9e02688539, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: PaperPickUp
+    clip: {fileID: 8300000, guid: c586ac27169e42b4e9bc352c9101e868, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 3409f4208e6f2bb47afd0d3ff1735d8e, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: Fail
+    clip: {fileID: 8300000, guid: fad328fcd76d2b54faaec6a78c882de1, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: PassButton
+    clip: {fileID: 8300000, guid: 714f327e884ce4c43a0decc970644725, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: ValidationButton
+    clip: {fileID: 8300000, guid: 505a5519522780b42b0d6fe93c939a56, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: CatWalk
+    clip: {fileID: 8300000, guid: 7cbde304ac9d66b498db3a7e2cc6502c, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: MouseWalk
+    clip: {fileID: 8300000, guid: e5c5e79ac7a7cfb438e0fb5c11df6cb7, type: 3}
+    volume: 0.7
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  playingAudio: []
+  notPlayingAudio: []
+  AudioObject: {fileID: 1530813843169950747, guid: 5da306965783e3a4e84a9d50d9f1e60d, type: 3}
