@@ -31,7 +31,7 @@ public class MagicEnabler : MonoBehaviour
     }
     public void MovePlayer()
     {
-        PlayerController.Instance.PlayerMesh.transform.LookAt(PlayerController.Instance.gameObject.transform.position + magicalObject.transform.position);
+        PlayerController.Instance.RotatePlayer(magicalObject.transform.position - PlayerController.Instance.gameObject.transform.position);
         if (GridController.Instance.cats.Count > 0)
         {
             PlayerController.Instance.gameObject.transform.DOMove(magicalObject.transform.position, GameManager.Instance.movementDuration)

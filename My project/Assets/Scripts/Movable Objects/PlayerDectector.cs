@@ -20,6 +20,17 @@ public class PlayerDectector : MonoBehaviour
         if(other.gameObject.GetComponent<PlayerController>() != null)
         {
             interactionEnabler.SetActive(true);
+            int index = 0;
+
+            for (int i = 0; i < obj.GetComponent<MovableObject>().MovableTriggers.Count; i++)
+            {
+                if(obj.GetComponent<MovableObject>().MovableTriggers[i].gameObject == triggerLinkToThis)
+                {
+                    index = i;
+                }
+            }
+
+            obj.GetComponent<MovableObject>().InteractionEnabler.GetComponent<InteractionEnabler>().indexPlayer = index;
         }
         if(other.gameObject.GetComponent<MovableObject>() != null || other.gameObject.GetComponent<MagicDestroyable>() != null || other.gameObject.GetComponent<CatMovement>())
         {

@@ -36,6 +36,20 @@ public class MovableObject : MonoBehaviour
             item.gameObject.SetActive(true);
         }
     }
+    public void HideSideTrigger(int indexTrigger)
+    {
+        if(indexTrigger == 0 || indexTrigger == 1)
+        {
+            MovableTriggers[2].gameObject.SetActive(false);
+            MovableTriggers[3].gameObject.SetActive(false);
+        }
+        if (indexTrigger == 2 || indexTrigger == 3)
+        {
+            MovableTriggers[0].gameObject.SetActive(false);
+            MovableTriggers[1].gameObject.SetActive(false);
+        }
+
+    }
     public void RefreshColliders()
     {
         foreach (Collider collider in DetectorsCollider)

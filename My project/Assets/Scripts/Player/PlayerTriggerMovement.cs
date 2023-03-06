@@ -21,7 +21,6 @@ public class PlayerTriggerMovement : MonoBehaviour
     public void OnClick()
     {
         Vector3 dir = transform.localPosition;
-        Debug.Log(dir);
         PlayerController.Instance.RotatePlayer(dir);
 
         if (GridController.Instance.cats.Count != 0)
