@@ -1787,6 +1787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoseCon: {fileID: 1044119011}
+  UI: {fileID: 1044119012}
   movementDuration: 0.5
   magicalDestructionDuration: 3
   MagicScrollCount: 0
@@ -5157,6 +5158,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488b71eb7f3dc1c4e84c05c1e912f2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1044119012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8234703187035386976, guid: 2fa6b83bf1ef4bb47a925d957b2ba98e, type: 3}
+  m_PrefabInstance: {fileID: 1044119010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a85c84c065af41ae4aa64a734db6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1046192745

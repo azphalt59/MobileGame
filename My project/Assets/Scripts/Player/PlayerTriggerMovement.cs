@@ -20,7 +20,6 @@ public class PlayerTriggerMovement : MonoBehaviour
     }
     public void OnClick()
     {
-        player.transform.position = transform.position;
         Vector3 dir = transform.localPosition;
         Debug.Log(dir);
         PlayerController.Instance.RotatePlayer(dir);

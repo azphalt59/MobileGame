@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public LoseCondition LoseCon;
+    public CheeseScrollUI UI;
     public float movementDuration = 2f;
     public float magicalDestructionDuration = 3f;
     public int MagicScrollCount = 0;
