@@ -11,10 +11,12 @@ public class MagicEnabler : MonoBehaviour
     {
         GridController.Instance.magicEnablers.Add(this);
     }
+#if UNITY_EDITOR
     private void OnMouseDown()
     {
         OnClick();
     }
+#endif
     public void OnClick()
     {
         gameObject.SetActive(false);
