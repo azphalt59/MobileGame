@@ -101,7 +101,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ValidationButton
     clip: {fileID: 8300000, guid: 505a5519522780b42b0d6fe93c939a56, type: 3}
-    volume: 0.7
+    volume: 1
     pitch: 3
     loop: 0
     source: {fileID: 0}
@@ -117,6 +117,25 @@ MonoBehaviour:
     pitch: 3
     loop: 0
     source: {fileID: 0}
-  playingAudio: []
+  playingAudio:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   notPlayingAudio: []
   AudioObject: {fileID: 1530813843169950747, guid: 5da306965783e3a4e84a9d50d9f1e60d, type: 3}
