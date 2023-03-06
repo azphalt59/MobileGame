@@ -123,6 +123,7 @@ public class CatMovement : MonoBehaviour
         Gizmos.color = Color.green;
         for (int i = 0; i < CatPattern.Count; i++)
         {
+            if (CatPattern.Count == 0) return;
             Gizmos.DrawLine(currentPos, currentPos + CatPattern[i] * Grid.Instance.SetPlayerSpeed());
             currentPos += CatPattern[i] * Grid.Instance.SetPlayerSpeed();
         }
