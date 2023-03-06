@@ -23,11 +23,12 @@ public class MovableTrigger : MonoBehaviour
             }
         }
     }
-
+#if UNITY_EDITOR
     private void OnMouseDown()
     {
         OnClick();
     }
+#endif
     public void OnClick()
     {
         obj.GetComponent<MovableObject>().HideTrigger();
@@ -44,12 +45,15 @@ public class MovableTrigger : MonoBehaviour
             //Debug.Log(objMvt);
 
             PlayerController.Instance.RotatePlayer(obj.transform.position - PlayerController.Instance.gameObject.transform.position);
+            PlayerController.Instance.PlayerMesh.transform.eulerAngles -= new Vector3(0,180,0);
+            PlayerController.Instance.PlayerAnimator.SetBool("Run", true);
             PlayerController.Instance.gameObject.transform.DOMove(PlayerController.Instance.gameObject.transform.position - objMvt, GameManager.Instance.movementDuration).OnComplete(PullObject);
         }
         else
         {
             Vector3 newObjPos = transform.position;
             newPlayerPos = obj.transform.position;
+            PlayerController.Instance.PlayerAnimator.SetBool("Push", true);
             obj.transform.DOMove(newObjPos, GameManager.Instance.movementDuration).OnComplete(OnObjMoveComplete);
         }
         
@@ -57,15 +61,40 @@ public class MovableTrigger : MonoBehaviour
     }
     private void PullObject()
     {
+        PlayerController.Instance.PlayerMesh.transform.eulerAngles -= new Vector3(0, 180, 0);
+        //if (PlayerController.Instance.PlayerAnimator.GetBool("Run") == true)
+        //{
+        //    PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
+        //}
+        
+        PlayerController.Instance.PlayerAnimator.SetBool("Push", true);
         obj.transform.DOMove(transform.position, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
     }
     private void OnObjMoveComplete()
     {
+        if(PlayerController.Instance.PlayerAnimator.GetBool("Push") == true)
+        {
+            PlayerController.Instance.PlayerAnimator.SetBool("Push", false);
+        }
+        if (PlayerController.Instance.PlayerAnimator.GetBool("Run") == true)
+        {
+            PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
+        }
+
+        PlayerController.Instance.PlayerAnimator.SetBool("Run", true);
         PlayerController.Instance.RotatePlayer(obj.transform.position - PlayerController.Instance.gameObject.transform.position);
         PlayerController.Instance.gameObject.transform.DOMove(newPlayerPos, GameManager.Instance.movementDuration).OnComplete(OnPlayerMoveComplete);
     }
     private void OnPlayerMoveComplete()
     {
+        if (PlayerController.Instance.PlayerAnimator.GetBool("Push") == true)
+        {
+            PlayerController.Instance.PlayerAnimator.SetBool("Push", false);
+        }
+        if (PlayerController.Instance.PlayerAnimator.GetBool("Run") == true)
+        {
+            PlayerController.Instance.PlayerAnimator.SetBool("Run", false);
+        }
         if (GridController.Instance.cats.Count > 0)
         {
             GridController.Instance.ExecuteCatsMovement();

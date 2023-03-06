@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
+    public Animator PlayerAnimator;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,14 +30,11 @@ public class PlayerController : MonoBehaviour
         {
             item.gameObject.SetActive(true);
         }
-    }
-    public void CheckBehindCol(Vector3 BehindPos)
-    {
-        if (Physics.CheckSphere(transform.position, 2))
-        {
 
-        }
+        PlayerAnimator.SetBool("Run", false);
+        PlayerAnimator.SetBool("Push", false);
     }
+  
     public void DisablePlayerTrigger()
     {
         foreach (PlayerTriggerMovement item in playerTriggerMovements)
@@ -47,21 +45,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     public void RotatePlayer(Vector3 mvtTarget)
     {
+        
         if(mvtTarget.z < 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 90, 0);
+            Debug.Log(90);
         }
         if (mvtTarget.z > 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 270, 0);
+            Debug.Log(270);
         }
         if (mvtTarget.x < 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 180, 0);
+            Debug.Log(180);
         }
         if (mvtTarget.x > 0)
         {
             PlayerMesh.transform.eulerAngles = new Vector3(0, 0, 0);
+            Debug.Log(0);
         }
     }
 }

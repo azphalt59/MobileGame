@@ -20371,6 +20371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf0fc35276c8e94aba9c295494d553b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 8611587171308511169}
   playerTriggerMovements:
   - {fileID: 3840918177757067758}
   - {fileID: 6640474918039864877}
@@ -20437,5 +20438,10 @@ PrefabInstance:
 --- !u!4 &8072765668984736776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3440176853817504326, guid: 33c342c51df1f8b46bddd754e551406a, type: 3}
+  m_PrefabInstance: {fileID: 6896646028772900430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8611587171308511169 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2897872717665165711, guid: 33c342c51df1f8b46bddd754e551406a, type: 3}
   m_PrefabInstance: {fileID: 6896646028772900430}
   m_PrefabAsset: {fileID: 0}
