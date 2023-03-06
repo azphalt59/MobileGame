@@ -53,7 +53,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CatCatch
     clip: {fileID: 8300000, guid: 752df63cb42038647aec33c18a2c543c, type: 3}
-    volume: 0.7
+    volume: 0.426
     pitch: 3
     loop: 0
     source: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PaperPickUp
     clip: {fileID: 8300000, guid: c586ac27169e42b4e9bc352c9101e868, type: 3}
-    volume: 0.7
+    volume: 1
     pitch: 3
     loop: 0
     source: {fileID: 0}

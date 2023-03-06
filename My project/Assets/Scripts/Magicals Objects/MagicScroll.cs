@@ -7,6 +7,7 @@ public class MagicScroll : MonoBehaviour, IPickable
     public void Pick()
     {
         GameManager.Instance.MagicScrollCount++;
+        AudioManager.Instance.Play("PaperPickUp");
     }
 
     // Start is called before the first frame update

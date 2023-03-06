@@ -117,9 +117,11 @@ public class CatMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Hall");
+        
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
+            AudioManager.Instance.Play("CatCatch");
+            AudioManager.Instance.Play("Fail");
             GameManager.Instance.LoseCon.PlayerLose();
         }
     }

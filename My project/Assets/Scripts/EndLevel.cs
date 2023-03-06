@@ -10,6 +10,7 @@ public class EndLevel : MonoBehaviour
         {
             if (GameManager.Instance.haveCheese)
             {
+                AudioManager.Instance.Play("Win");
                 GameManager.Instance.LoseCon.PlayerWin();
             }
         }
