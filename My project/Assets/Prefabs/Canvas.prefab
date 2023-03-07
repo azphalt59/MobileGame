@@ -1396,7 +1396,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3061521852745906750}
         m_TargetAssemblyTypeName: LoseCondition, Assembly-CSharp
-        m_MethodName: ResetLevel
+        m_MethodName: Nextlevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
